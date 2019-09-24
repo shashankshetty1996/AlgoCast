@@ -14,6 +14,49 @@
 
 const Stack = require('./stack');
 
-class Queue {}
+class Queue {
+  constructor() {
+    this.first = new Stack();
+    this.second = new Stack();
+  }
+
+  add(record) {
+    this.first.push(record);
+  }
+
+  remove() {
+    // Transfer data from stack 1 to stack 2
+    while (this.first.peek()) {
+      this.second.push(this.first.pop());
+    }
+
+    // first element to be removed
+    const record = this.second.pop();
+
+    // restore stack1
+    while (this.second.peek()) {
+      this.first.push(this.second.pop());
+    }
+
+    return record;
+  }
+
+  peek() {
+    // Transfer data from stack 1 to stack 2
+    while (this.first.peek()) {
+      this.second.push(this.first.pop());
+    }
+
+    // first element inserted. (top in queue)
+    const record = this.second.peek();
+
+    // Restore first stack
+    while (this.second.peek()) {
+      this.first.push(this.second.pop());
+    }
+
+    return record;
+  }
+}
 
 module.exports = Queue;
