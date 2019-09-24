@@ -1,0 +1,7 @@
+Certificate image:
+
+https://udemy-certificate.s3.amazonaws.com/image/UC-BQGOXSP0.jpg
+
+Certificate PDF:
+
+https://udemy-certificate.s3.amazonaws.com/pdf/UC-BQGOXSP0.pdf
